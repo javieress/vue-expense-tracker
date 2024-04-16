@@ -13,14 +13,14 @@ export default {
                 <span>Cash</span>
                 <span>
                     -$400
-                    <button class="delete-btn">x</button>
+                    <!-- <button class="delete-btn">x</button> -->
                 </span>
             </li>
             <li class="plus">
                 <span>Paycheck</span>
                 <span>
-                    +$400
-                    <button class="delete-btn">x</button>
+                    $400
+                    <!-- <button class="delete-btn">x</button> -->
                 </span>
             </li>
         </ul>
@@ -52,5 +52,13 @@ export default {
     border-radius: 3px;
     box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
     margin: 5px 0;
+}
+
+.list li.minus {
+    border-right: 5px solid #c0392b;
+}
+
+.list li.plus {
+    border-right: 5px solid #2ecc71;
 }
 </style>
