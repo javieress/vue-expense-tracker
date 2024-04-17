@@ -1,5 +1,5 @@
 <script setup>
-import { ref, computed } from 'vue'
+import { ref, computed, onMounted } from 'vue'
 import Header from './components/Header.vue'
 import Balance from './components/Balance.vue'
 import IncomeExpenses from './components/IncomeExpenses.vue'
@@ -11,6 +11,10 @@ import { useToast } from "vue-toastification";
 const toast = useToast();
 
 const transactions = ref([])
+
+onMounted(() => {
+  transactions.value = JSON.parse(localStorage.getItem('transactions')) || []
+})
 
 // get total
 const total = computed(() => {
@@ -35,12 +39,21 @@ const expenses = computed(() => {
 const handleAddTransaction = (transaction) => {
   transactions.value.push(transaction)
   toast.success('Transaction added successfully')
+
+  saveTransactions()
 }
 
 // delete transaction
 const handleDeleteTransaction = (id) => {
   transactions.value = transactions.value.filter(transaction => transaction.id !== id)
   toast.success('Transaction deleted successfully')
+
+  saveTransactions()
+}
+
+// save transactions to local storage
+const saveTransactions = () => {
+  localStorage.setItem('transactions', JSON.stringify(transactions.value))
 }
 
 </script>
