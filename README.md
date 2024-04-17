@@ -1,14 +1,17 @@
-# vue-expense-tracker
+# Vue Expense Tracker
 
-This template should help get you started developing with Vue 3 in Vite.
+Welcome to the Vue Expense Tracker project! This expense tracker allows you to manage your transactions by adding expenses and income. It provides a balance overview and a transaction history. The data is stored locally in your browser's LocalStorage for persistent usage.
 
-## Recommended IDE Setup
+## Live Demo
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+Check out the live demo of the Vue Expense Tracker on [Cloudflare Pages](https://vue-expense-tracker-6zf.pages.dev).
 
-## Customize configuration
+## Features
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+- Add expenses and income transactions.
+- Delete transactions.
+- View balance and transaction history.
+- Data persistence using LocalStorage.
 
 ## Project Setup
 
