@@ -1,7 +1,17 @@
-<script>
-export default {
-    name: 'IncomeExpenses'
-}
+<script setup>
+import { defineProps } from 'vue'
+
+const props = defineProps({
+    income: {
+        type: Number,
+        required: true
+    },
+    expenses: {
+        type: Number,
+        required: true
+    }
+})
+
 </script>
 
 <template>
@@ -9,12 +19,13 @@ export default {
         <div class="income">
             <h4>INCOME</h4>
             <p class="money plus
-            ">+$0.00</p>
+            ">+${{ income.toFixed(2) }}
+            </p>
         </div>
         <hr>
         <div class="expense">
             <h4>EXPENSE</h4>
-            <p class="money minus">-$0.00</p>
+            <p class="money minus">-${{ Math.abs(expenses).toFixed(2) }}</p>
         </div>
     </div>
 </template>
@@ -29,6 +40,12 @@ export default {
     margin-bottom: 20px;
     padding: 20px;
     background-color: #fff;
+    transition: all 0.5s ease;
+}
+
+.inc-exp-container:hover {
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
 }
 
 .inc-exp-container div {

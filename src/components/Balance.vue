@@ -1,14 +1,19 @@
-<script>
+<script setup>
+import { defineProps } from 'vue'
 
-export default {
-    name: 'Balance',
-}
+const props = defineProps({
+    total: {
+        type: Number,
+        required: true
+    }
+})
+
 </script>
 
 <template>
     <div class="balance">
         <h4>YOUR BALANCE</h4>
-        <h1>$0.00</h1>
+        <h1>${{ total.toFixed(2) }}</h1>
     </div>
 </template>
 
